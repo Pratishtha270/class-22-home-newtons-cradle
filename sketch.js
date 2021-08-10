@@ -39,19 +39,19 @@ function setup() {
 		//isStatic:true
 	  }
 
-	bob1 = Bodies.circle(350,400,40,ball_options);
+	bob1 = Bodies.circle(390,500,40,ball_options);
     World.add(world,bob1);
 
-	bob2 = Bodies.circle(390,400,40,ball_options);
+	bob2 = Bodies.circle(395,500,40,ball_options);
     World.add(world,bob2);
 
-	bob3 = Bodies.circle(430,400,40,ball_options);
+	bob3 = Bodies.circle(400.2,500,40,ball_options);
     World.add(world,bob3);
 
-	bob4 = Bodies.circle(470,400,40,ball_options);
+	bob4 = Bodies.circle(405.3,500,40,ball_options);
     World.add(world,bob4);
 
-	bob5 = Bodies.circle(510,400,40,ball_options);
+	bob5 = Bodies.circle(410.4,500,40,ball_options);
     World.add(world,bob5);
 
 	rope1=new Rope(bob1,roof,-80,0);
@@ -67,6 +67,8 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
+  ellipseMode(CENTER);
+
   background("#99004d");
 
   rect(roof.position.x,roof.position.y,230,20);
@@ -93,6 +95,6 @@ function keyPressed()
 {
   if(keyCode==UP_ARROW)
     {
-      Matter.Body.applyForce(bob1,{x:0,y:0},{x:-0.1,y:0});
+      Matter.Body.applyForce(bob1,{x:0,y:0},{x:-0.3,y:0});
     }
 }
