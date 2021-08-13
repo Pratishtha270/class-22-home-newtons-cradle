@@ -35,23 +35,25 @@ function setup() {
     World.add(world,roof);
 
 	var ball_options = {
-		restitution: 0.4
-		//isStatic:true
+		restitution: 1,
+		density:0.8,
+    friction:0,
 	  }
+    
 
-	bob1 = Bodies.circle(390,500,40,ball_options);
+	bob1 = Bodies.circle(390,380,20,ball_options);
     World.add(world,bob1);
 
-	bob2 = Bodies.circle(395,500,40,ball_options);
+	bob2 = Bodies.circle(395,380,20,ball_options);
     World.add(world,bob2);
 
-	bob3 = Bodies.circle(400.2,500,40,ball_options);
+	bob3 = Bodies.circle(400,380,20,ball_options);
     World.add(world,bob3);
 
-	bob4 = Bodies.circle(405.3,500,40,ball_options);
+	bob4 = Bodies.circle(405,380,20,ball_options);
     World.add(world,bob4);
 
-	bob5 = Bodies.circle(410.4,500,40,ball_options);
+	bob5 = Bodies.circle(410,380,20,ball_options);
     World.add(world,bob5);
 
 	rope1=new Rope(bob1,roof,-80,0);
@@ -83,6 +85,7 @@ function draw() {
   ellipse(bob4.position.x,bob4.position.y,40);
   ellipse(bob5.position.x,bob5.position.y,40);
 
+  //call display() to show ropes here
   rope1.display();
   rope2.display();
   rope3.display();
@@ -95,6 +98,6 @@ function keyPressed()
 {
   if(keyCode==UP_ARROW)
     {
-      Matter.Body.applyForce(bob1,{x:0,y:0},{x:-0.3,y:0});
+      Matter.Body.applyForce(bob1,bob1.position,{x:-40,y:-20});
     }
 }
